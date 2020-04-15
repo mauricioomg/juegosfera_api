@@ -8,22 +8,7 @@ class Product1Serializer(serializers.ModelSerializer):
         model = Product1
         fields = '__all__'
 
-
-#class UserSerializer(serializers.HyperlinkedModelSerializer):
-#    #url = serializers.HyperlinkedIdentityField(view_name="index:user-detail")
-#
-#    class Meta:
-#        model = User
-#        fields = ['username', 'email', 'password', ]
-#
-#    def validate_username(self, data):
-#        users = User.objects.filter(username = data)
-#        if users.count() != 0 :
-#            raise serializers.ValidationError('Este nombre de usuario ya existe, ingrese uno nuevo')
-#        else:
-#            return data 
-#
-# 
+ 
 class UserSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
     username = serializers.CharField()
